@@ -20,6 +20,8 @@
             padding: 1em 2em;
             background-color: #f4f4f4;
             border-bottom: 2px solid #002147;
+            position: relative;
+            z-index: 10; /* Ensures the nav bar is above the artwork */
         }
         .menu-container {
             display: flex;
@@ -52,6 +54,7 @@
             padding: 1em;
             border: 1px solid #002147;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 20; /* Ensures the menu appears above the image */
         }
         .menu a {
             text-decoration: none;
@@ -114,7 +117,7 @@
                 <div></div>
             </div>
             <div class="menu" id="menu">
-                <a href="index.html">Home</a>
+                <a href="index.html">Home</a> <!-- Ensure the home link navigates correctly -->
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
@@ -165,11 +168,10 @@
         // Display the selected artwork
         document.addEventListener('DOMContentLoaded', () => {
             let params = getQueryParams();
-            // Ensure both fullscale and detail images, as well as the caption, are processed correctly
             if (params.img && params.detailsImg && params.caption) {
-                document.getElementById('fullscale-img').src = params.img; // Set fullscale image source
-                document.getElementById('details-img').src = params.detailsImg; // Set details image source
-                document.getElementById('art-caption').textContent = params.caption; // Set caption
+                document.getElementById('fullscale-img').src = params.img;
+                document.getElementById('details-img').src = params.detailsImg;
+                document.getElementById('art-caption').textContent = params.caption;
             }
         });
     </script>
