@@ -175,5 +175,20 @@
             }
         });
     </script>
+    
+    <script>
+    // Parse URL parameters
+    const params = new URLSearchParams(window.location.search);
+    const caption = params.get("caption");
+
+    // Update caption content
+    if (caption) {
+        document.getElementById("caption-area").innerHTML = `
+            <strong>${caption}</strong><br>
+            Framed 16"×18"
+        `;
+    }
+    </script>
+
 </body>
 </html>
