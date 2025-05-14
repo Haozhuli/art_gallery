@@ -87,25 +87,13 @@
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
-        .gallery-item:nth-child(-n + 14) {
-        /*border: 5px solid #A0522D; /* Example: 5px solid border in a sienna/brown color */
-            background-color: beige
-            border: 10px solid #CD853F;
-            box-sizing: border-box
-            padding: 15px; /* Padding to create space between border/background and image */
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow */
-        }
         
         .gallery img:hover {
-            transform: scale(1.02);
-            box-shadow: none; /*Remove individual image shadow if frame has one*/
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
-
-         .gallery-item:nth-child(-n + 14) img:hover {
-             transform: scale(1); /* Prevent image scaling within the framed item */
-         }
         .caption {
-            margin-top: 10px;
+            margin-top: 25px;
             font-size: 1em;
             color: #555;
         }
