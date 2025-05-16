@@ -178,18 +178,57 @@
     </script>
     
     <script>
-    // Parse URL parameters
-    const params = new URLSearchParams(window.location.search);
-    const caption = params.get("caption");
-
-    // Update caption content
-    if (caption) {
-        document.getElementById("caption-area").innerHTML = `
-            <strong>${caption}</strong><br>
-            Framed 12"×16"
-        `;
-    }
+        // Parse URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const index = parseInt(params.get("index"));
+    
+        const captionArea = document.getElementById("caption-area");
+    
+        if (!isNaN(index)) {
+            let captionText = "";
+    
+            if (index >= 1 && index <= 12) {
+                captionText = `Watercolor Flower ${index}<br>Framed 12&quot;×16&quot;`;
+            } else if (index === 13 || index === 14) {
+                captionText = `Watercolor Flower ${index}<br>Framed 8&quot;×10&quot;`;
+            } else {
+                // Replace this mapping with actual artwork titles if needed
+                const artworkTitles = {
+                    15: "Acrylic-Monochrome-Exercise-1",
+                    16: "Acrylic-Monochrome-Exercise-2",
+                    17: "Acrylic-Cute animals resting in the forest",
+                    18: "Acrylic-Squirral in the forest",
+                    19: "Oil-Alone 1",
+                    20: "Oil-Alone 2",
+                    21: "Watercolor-Alps Scenery 1",
+                    22: "Watercolor-Alps Scenery 2",
+                    23: "Watercolor-Banff Scenery 1",
+                    24: "Watercolor-Banff Scenery 2",
+                    25: "Watercolor-Misty Alps Scenery 1",
+                    26: "Watercolor-Misty Alps Scenery 2",
+                    27: "Watercolor-Misty Coniferous Forest 1",
+                    28: "Watercolor-Misty Coniferous Forest 2",
+                    29: "Watercolor-Misty Coniferous Forest 3",
+                    30: "Watercolor-Misty Coniferous Forest 4",
+                    31: "Acrylie-Pink sea",
+                    32: "Watercolor-Foggy Snowy Mountain",
+                    33: "Watercolor-Banff Scenery 3",
+                    34: "Watercolor-Monochrome Exercise",
+                    35: "Emerald Lake Scenery",
+                    36: "Needle Pen Drawing",
+                    37: "Oil-Portrait",
+                    38: "Watercolor-Foggy Mountain 2",
+                    // Add more mappings as needed
+                };
+                captionText = artworkTitles[index] || ""; // fallback to empty string
+            }
+    
+            if (captionText) {
+                captionArea.innerHTML = `<strong>${captionText}</strong>`;
+            }
+        }
     </script>
+
 
 </body>
 </html>
