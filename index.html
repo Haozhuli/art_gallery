@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">    <style>
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
@@ -96,9 +95,13 @@
             margin-top: 25px;
             font-size: 0.8em;
             color: #555;
+            font-family: 'Cormorant Garamond', serif; /* REVISION: Apply Cormorant Garamond*/
         }
         
-        .artwork-title,
+        .artwork-title {
+                font-size: 0.8em; /* REVISION: Adjusted font size to make it slightly larger than other caption elements */
+                font-weight: normal; /* Ensure they are not bold if .caption applies it */
+            }
         .artwork-dimensions {
             font-size: 0.8em; /* Make these smaller relative to the .caption default */
             font-weight: normal; /* Ensure they are not bold if .caption applies it */
